@@ -30,7 +30,6 @@ elementsRef.themeColorToggleEl.addEventListener('change', themeColorHandler);
 initAlphabetSearch();
 generateRandomCocktails();
 
-// Generate alphabet search on page
 function initAlphabetSearch() {
   renderAlphabet();
   elementsRef.selectValue.addEventListener('click', onToggleSelectOptions);
@@ -40,7 +39,6 @@ function initAlphabetSearch() {
   );
 }
 
-// Generate random cocktails list after page loading
 async function generateRandomCocktails() {
   try {
     const randomCocktailsData = [];
@@ -58,7 +56,6 @@ async function generateRandomCocktails() {
   }
 }
 
-// Generate filtered cocktails by letter
 async function alphabetSearchHandler(e) {
   if (e.target.nodeName !== 'BUTTON') return;
 
@@ -73,7 +70,6 @@ async function alphabetSearchMobileHandler(e) {
   await searchCocktails(e.target.dataset.value, getCocktailsByLetter);
 }
 
-// Handle search query
 async function searchFormHandler(e) {
   e.preventDefault();
   const searchQuery = e.target.elements.search.value.trim();
@@ -85,19 +81,16 @@ async function searchFormHandler(e) {
   }
 }
 
-// General function to get cocktail info and render gallery
 async function searchCocktails(searchQuery, getCocktail) {
   try {
     const foundCocktail = await getCocktail(searchQuery);
 
-    // Print a message when no cocktail is found
     showMsgNotFound(
       foundCocktail,
       elementsRef.cocktailsListEl,
       elementsRef.paginationEl
     );
 
-    // Render cocktails gallery when the request is successful
     if (foundCocktail) {
       createPagination(
         foundCocktail,
@@ -116,7 +109,6 @@ async function searchCocktails(searchQuery, getCocktail) {
   }
 }
 
-// Handle button clicks in the card
 async function cocktailCardHandler(e) {
   if (!e.target.closest('BUTTON')) {
     return;
@@ -137,8 +129,6 @@ async function cocktailCardHandler(e) {
   if (e.target.classList.contains('js-btn-more')) {
     const cocktailInfo = await getCocktailsById(cocktailId);
 
-    // const ingredientModalContent = createIngredientsListMarkup(cocktailInfo[0]);
-
     const cocktailModalContent = createCocktailModalMarkup(cocktailInfo[0]);
 
     createModal(
@@ -154,7 +144,6 @@ function themeColorHandler() {
   changeColorTheme();
 }
 
-//====Utils for alphabet search====
 function onToggleSelectOptions() {
   elementsRef.selectOptions.classList.toggle('is-hidden');
 }

@@ -1,6 +1,5 @@
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
 
-// Create markup for alphabet search on tablet or desktop ver
 export function createDesktopAlphabetMarkup() {
   return [...alphabet]
     .map(letter => {
@@ -9,7 +8,6 @@ export function createDesktopAlphabetMarkup() {
     .join('');
 }
 
-// Create markup for alphabet search on mobile
 export function createMobileAlphabetMarkup() {
   return [...alphabet]
     .map(letter => {

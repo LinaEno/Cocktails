@@ -1,6 +1,3 @@
-// const apiURL = 'https://thecocktaildb.com/api/json/v1/1';
-
-// Get random cocktails from server
 export async function getRandomCocktails() {
   const response = await fetch(
     `https://thecocktaildb.com/api/json/v1/1/random.php`
@@ -9,7 +6,6 @@ export async function getRandomCocktails() {
   return randomCocktails;
 }
 
-// Get cocktail by specific letter
 export async function getCocktailsByLetter(letter) {
   const response = await fetch(
     `https://thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`
@@ -18,7 +14,6 @@ export async function getCocktailsByLetter(letter) {
   return cocktails.drinks;
 }
 
-// Get cocktail by name
 export async function getCocktailByName(cocktailName) {
   const response = await fetch(
     `https://thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailName}`
@@ -27,7 +22,6 @@ export async function getCocktailByName(cocktailName) {
   return cocktail.drinks;
 }
 
-// Get cocktail by id
 export async function getCocktailsById(cocktailId) {
   const response = await fetch(
     `https://thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailId}`
@@ -36,7 +30,6 @@ export async function getCocktailsById(cocktailId) {
   return cocktails.drinks;
 }
 
-// Get ingredient by Name
 export async function getIngredientByName(ingredientName) {
   const response = await fetch(
     `https://thecocktaildb.com/api/json/v1/1/search.php?i=${ingredientName}`
@@ -45,7 +38,6 @@ export async function getIngredientByName(ingredientName) {
   return ingredient.ingredients;
 }
 
-// Get ingredient by id
 export async function getIngredientById(ingredientId) {
   const response = await fetch(
     `https://thecocktaildb.com/api/json/v1/1/lookup.php?iid=${ingredientId}`

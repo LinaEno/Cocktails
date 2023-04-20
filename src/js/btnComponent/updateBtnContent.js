@@ -10,7 +10,6 @@ export function updateFavBtnContent(cardId, localStorageKey) {
   return btnContent;
 }
 
-// Change button content in modal
 export function updateModalFavBtnContent(cardId, localStorageKey) {
   const elemExists = checkElInLocalStorage(cardId, localStorageKey);
   const btnContent = createModalBtnMarkup(elemExists);

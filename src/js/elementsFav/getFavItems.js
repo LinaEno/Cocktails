@@ -2,7 +2,6 @@ import { getFromLocalStorage } from '../localStorage/localStorage';
 import { showMsgNotAddedCocktailOnFavPage } from '../utils/utils';
 import { elementsRef } from '../elementsRefs/references';
 
-// Get favorite items using stored ids
 export async function getFavItemsByIds(storageKey, getItems) {
   const favItemsId = getFromLocalStorage(storageKey);
 

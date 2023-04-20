@@ -13,8 +13,6 @@ import { createIngredientModalMarkup } from './js/modals/ingredientModalMarkup';
 import { createIngredientModal } from './js/modals/createModal';
 import { showMsgNotFound } from './js/utils/utils';
 import { getFavItemsByIds } from './js/elementsFav/getFavItems';
-import { setDefaultTheme } from './js/changeColorTheme';
-import { changeColorTheme} from './js/changeColorTheme';
 
 window.addEventListener('load', favIngredientHandler);
 elementsRef.ingredientsListEl.addEventListener('click', ingredientCardHandler);
@@ -22,13 +20,9 @@ elementsRef.searchFormRef.addEventListener(
   'submit',
   searchFavIngredientHandler
 );
-elementsRef.themeColorToggleEl.addEventListener('change', () => {
-
-});
+elementsRef.themeColorToggleEl.addEventListener('change', () => {});
 
 async function favIngredientHandler() {
-  // const filteredIngredientsById = await getIngredientsByStorageIds();
-
   const filteredIngredientsById = await getFavItemsByIds(
     constants.favIngredientStorageKey,
     getIngredientById
@@ -37,16 +31,6 @@ async function favIngredientHandler() {
   if (filteredIngredientsById) {
     displayIngredientsGallery(filteredIngredientsById);
   }
-
-  // if (!filteredIngredientsById) {
-  //   elementsRef.notFoundTextEl.classList.remove('is-hidden');
-  // } else {
-  //   renderGallery(
-  //     filteredIngredientsById,
-  //     elementsRef.ingredientsListEl,
-  //     createIngredientCardMarkup
-  //   );
-  // }
 }
 
 async function ingredientCardHandler(e) {
@@ -84,7 +68,6 @@ async function searchFavIngredientHandler(e) {
     return;
   }
 
-  // const filteredCocktailsById = await getIngredientsByStorageIds();
   const filteredCocktailsById = await getFavItemsByIds(
     constants.favIngredientStorageKey,
     getIngredientById
@@ -105,19 +88,6 @@ async function searchFavIngredientHandler(e) {
   } else {
     Notiflix.Notify.info("You haven't any favorite ingredients");
   }
-
-  // if (filteredCocktailByName !== 0) {
-  //   renderGallery(
-  //     filteredCocktailByName,
-  //     elementsRef.ingredientsListEl,
-  //     createIngredientCardMarkup
-  //   );
-  //   createPagination(
-  //     filteredCocktailByName,
-  //     elementsRef.ingredientsListEl,
-  //     createIngredientCardMarkup
-  //   );
-  // }
 }
 
 function displayIngredientsGallery(filteredIngredient) {
@@ -135,29 +105,3 @@ function displayIngredientsGallery(filteredIngredient) {
     );
   }
 }
-
-// async function getIngredientsByStorageIds() {
-//   const favIngredientsId = getFromLocalStorage(
-//     constants.favIngredientStorageKey
-//   );
-
-//   console.log(favIngredientsId.length);
-//   showNotFoundMessageOnFavPage(
-//     favIngredientsId.length,
-//     elementsRef.notFoundMsgOnFavPageEl
-//   );
-//   if (favIngredientsId.length === 0) {
-//     return false;
-//   } else {
-//     try {
-//       const ingredientsCardsInfo = [];
-//       for (const id of favIngredientsId) {
-//         const favIngredient = await getIngredientById(id);
-//         ingredientsCardsInfo.push(favIngredient[0]);
-//       }
-//       return ingredientsCardsInfo;
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   }
-// }

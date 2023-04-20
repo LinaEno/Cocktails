@@ -4,7 +4,6 @@ import Pagination from 'tui-pagination';
 let currentPage = 1;
 let cardsPerPage = calcCardsPerPage();
 
-// Generate cocktails list
 export function renderGallery(cocktailsData, elementRef, createCardMarkup) {
   let cocktailsListMarkup = '';
   cocktailsData

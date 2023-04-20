@@ -1,4 +1,3 @@
-import sprite from '../../images/svg/icons-sprite.svg';
 import { updateFavBtnContent } from '../btnComponent/updateBtnContent';
 import { constants } from '../constantsStorage/constants';
 
