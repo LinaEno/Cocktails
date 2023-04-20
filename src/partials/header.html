@@ -1,35 +1,60 @@
-<header class="header">
-  <div class="container container__header">
-    <div class="logo">
-      <a href="./index.html" class="logo__header"> COCKTAILS </a>
-      <nav>
-        <ul class="nav">
-          <li class="nav__item">
-            <a class="nav__link current" href="./index.html">Home</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#">Favorite cocktails</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#">Favorite ingredients</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div class="search">
-      <form class="search-form js-search-form" id="search-form">
-        <input
-          type="text"
-          name="query"
-          placeholder="Search"
-          class="search-field"
-        />
-        <button type="submit" class="search-btn">
-          <svg class="search-icon" width="12" height="12">
-            <use href="#"></use>
+<!-- <header class="header"> -->
+<div class="container container-header">
+  <a class="logo" href="./index.html"
+    >Cocktails
+    <img class="logo__img" src="./images/logo-icon.png" alt="logo" />
+  </a>
+  <nav class="header__nav">
+    <ul class="header__nav-list">
+      <li class="header__nav-item">
+        <a class="header__nav-link" href="./index.html">Home</a>
+      </li>
+      <li class="header__nav-item">
+        <a class="header__nav-link" href="#">
+          Favorite
+          <svg class="header__favorite-icon" width="24" height="24">
+            <use
+              href="./images/hero/symbol-defs.svg#icon-shevron-down-big"
+            ></use>
           </svg>
-        </button>
-      </form>
-    </div>
+        </a>
+        <div class="header__box-favorite">
+          <a class="header__favorite-link" href="./favCocktail.html"
+            >Favorite cocktails</a
+          >
+          <a class="header__favorite-link" href="./favIngridients.html"
+            >Favorite&nbspingredients</a
+          >
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <form class="header__form" action="">
+    <button class="searchButton" type="submit">
+      <svg class="searchButton__icon" width="24" height="24">
+        <use href="./images/hero/symbol-defs.svg#icon-search"></use>
+      </svg>
+    </button>
+    <input
+      class="header__search"
+      name="search"
+      type="text"
+      placeholder="Search"
+    />
+  </form>
+  <button class="burger-btn button">
+    <svg width="30" height="30">
+      <use
+        class="menu-icon"
+        href="./images/svg/icons-sprite.svg#burger-menu"
+      ></use>
+    </svg>
+  </button>
+  <div class="header__toggle-box">
+    <input id="switch" type="checkbox" />
+    <p class="header__toggle-light">Light</p>
+    <label class="header__toggle" for="switch"></label>
+    <p class="header__toggle-dark">Dark</p>
   </div>
-</header>
+</div>
+<!-- </header> -->
