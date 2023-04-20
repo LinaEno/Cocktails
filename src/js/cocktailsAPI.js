@@ -19,7 +19,8 @@ export async function getRandomCocktails() {
 export async function getCocktailsByLetter(letter) {
   try {
     const { data } = await cocktails.get(`search.php?f=${letter}`);
-    return data;
+    console.log('data.drinks', data.drinks);
+    return data.drinks;
   } catch (error) {
     console.log(error);
   }
